@@ -1,8 +1,11 @@
+import './App.css'
+
 function App() {
   return (
     <div>
-      <div>
-        <h2>Let's get started!</h2>
+      <div className="text-box">
+        <h2>Hello, from vhdc</h2>
+        <p>This is para</p>
       </div>
     </div>
   );
