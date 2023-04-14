@@ -1,10 +1,8 @@
 import './App.css'
-import DisplayExpense from './components/DisplayExpense';
+import DisplayExpense from './components/Expense/DisplayExpense';
+import ExpenseItems from './components/Expense/ExpenseItems';
 
-
-
-
-function App() {
+const  App = () => {
   // const expenses = [
   //   {
   //     id: "e1",
@@ -31,11 +29,10 @@ function App() {
   //     date: new Date(2023, 3, 10),
   //   },
   // ];
-
     const expenses = [
       {
         id: "e1",
-        title: "Toilet Paper",
+        title: "made with love  by vhdc ",
         amount: 94.12,
         date: new Date(2020, 7, 14),
       },
@@ -62,7 +59,29 @@ function App() {
 
   return (
     <div>
-      <DisplayExpense list={expenses}></DisplayExpense>
+      {/* <DisplayExpense listItems={expenses}></DisplayExpense> */}
+      <div>
+        <ExpenseItems
+          title={expenses[0].title}
+          amount={expenses[0].amount}
+          date={expenses[0].date}
+        ></ExpenseItems>
+        <ExpenseItems
+          title={expenses[1].title}
+          amount={expenses[1].amount}
+          date={expenses[1].date}
+        ></ExpenseItems>
+        <ExpenseItems
+          title={expenses[2].title}
+          amount={expenses[2].amount}
+          date={expenses[2].date}
+        ></ExpenseItems>
+        <ExpenseItems
+          title={expenses[3].title}
+          amount={expenses[3].amount}
+          date={expenses[3].date}
+        ></ExpenseItems>
+      </div>
     </div>
   );
 }
