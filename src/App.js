@@ -59,8 +59,9 @@ const  App = () => {
 
   return (
     <div>
-      {/* <DisplayExpense listItems={expenses}></DisplayExpense> */}
-      <div>
+      <h2>Let's get started</h2>
+      <DisplayExpense listItems={expenses}> </DisplayExpense>
+      {/* <div>
         <ExpenseItems
           title={expenses[0].title}
           amount={expenses[0].amount}
@@ -81,7 +82,7 @@ const  App = () => {
           amount={expenses[3].amount}
           date={expenses[3].date}
         ></ExpenseItems>
-      </div>
+      </div> */}
     </div>
   );
 }
