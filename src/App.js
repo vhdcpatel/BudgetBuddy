@@ -58,11 +58,12 @@ const  App = () => {
   //     date: new Date(2023, 3, 10),
   //   },
   // ];
-  const[] = useState(dummyExpenses);
+  const [expenses,setExpenses] = useState(dummyExpenses);
 
    const addExpenseHandler = (expense) =>{
       console.log("In App.js");
       console.log(expense)
+      setExpenses( prevExpenses => { return [expense, ...prevExpenses];});
    }
 
   return (
