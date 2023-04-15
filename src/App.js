@@ -1,6 +1,35 @@
-import './App.css'
+import { useState } from 'react';
 import DisplayExpense from './components/Expense/DisplayExpense';
 import ExpenseItems from './components/Expense/ExpenseItems';
+import NewExpense from './components/NewExpense/NewExpense';
+import './App.css'
+
+ const dummyExpenses = [
+   {
+     id: "e1",
+     title: "made with love  by vhdc ",
+     amount: 94.12,
+     date: new Date(2020, 7, 14),
+   },
+   {
+     id: "e2",
+     title: "New TV",
+     amount: 799.49,
+     date: new Date(2021, 2, 12),
+   },
+   {
+     id: "e3",
+     title: "Car Insurance",
+     amount: 294.67,
+     date: new Date(2021, 2, 28),
+   },
+   {
+     id: "e4",
+     title: "New Desk (Wooden)",
+     amount: 450,
+     date: new Date(2021, 5, 12),
+   },
+ ];
 
 const  App = () => {
   // const expenses = [
@@ -29,37 +58,17 @@ const  App = () => {
   //     date: new Date(2023, 3, 10),
   //   },
   // ];
-    const expenses = [
-      {
-        id: "e1",
-        title: "made with love  by vhdc ",
-        amount: 94.12,
-        date: new Date(2020, 7, 14),
-      },
-      {
-        id: "e2",
-        title: "New TV",
-        amount: 799.49,
-        date: new Date(2021, 2, 12),
-      },
-      {
-        id: "e3",
-        title: "Car Insurance",
-        amount: 294.67,
-        date: new Date(2021, 2, 28),
-      },
-      {
-        id: "e4",
-        title: "New Desk (Wooden)",
-        amount: 450,
-        date: new Date(2021, 5, 12),
-      },
-    ];
+  const[] = useState(dummyExpenses);
 
+   const addExpenseHandler = (expense) =>{
+      console.log("In App.js");
+      console.log(expense)
+   }
 
   return (
     <div>
-      <h2>Let's get started</h2>
+      <NewExpense onLoadExpenseData={addExpenseHandler}></NewExpense>
+
       <DisplayExpense listItems={expenses}> </DisplayExpense>
       {/* <div>
         <ExpenseItems
