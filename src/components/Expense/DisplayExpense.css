@@ -6,3 +6,10 @@
   width: 50rem;
   max-width: 95%;
 }
+
+.noContent {
+  text-align: center;
+  color: aliceblue;
+  font-size: medium;
+  font:bold;
+}
