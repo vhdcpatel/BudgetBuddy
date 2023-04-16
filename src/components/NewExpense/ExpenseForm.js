@@ -86,6 +86,7 @@ const  ExpenseForm = (props) => {
           <label>Title</label>
           <input
             type="text"
+            // value and onChange makes it two way binding.
             value={enteredTitle}
             onChange={titleChangeHandler}
           ></input>

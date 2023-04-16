@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import DisplayExpense from './components/Expense/DisplayExpense';
-import ExpenseItems from './components/Expense/ExpenseItems';
 import NewExpense from './components/NewExpense/NewExpense';
 import './App.css'
 
@@ -61,9 +60,7 @@ const  App = () => {
   const [expenses,setExpenses] = useState(dummyExpenses);
 
    const addExpenseHandler = (expense) =>{
-      console.log("In App.js");
-      console.log(expense)
-      setExpenses( prevExpenses => { return [expense, ...prevExpenses];});
+      setExpenses( (prevExpenses)=> { return [expense, ...prevExpenses];});
    }
 
   return (
