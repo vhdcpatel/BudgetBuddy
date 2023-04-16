@@ -10,13 +10,17 @@ function DisplayExpense(props) {
 
   const filterChangeHandler = (selectedYear) =>{
     console.log(selectedYear);
-    setFilterYear((filterYear) => (filterYear = selectedYear));
+    // setFilterYear((filterYear) => (filterYear = selectedYear));
+    setFilterYear(selectedYear);
   }
   console.log(filterYear);
 
   return (
     <Card className="expenses">
-      <ExpenseFilter onSelect={filterChangeHandler}></ExpenseFilter>
+      <ExpenseFilter
+        selectedYear={filterYear}
+        onSelect={filterChangeHandler}
+      ></ExpenseFilter>
       {props.listItems.map((expense) => (
         <ExpenseItems
           title={expense.title}
