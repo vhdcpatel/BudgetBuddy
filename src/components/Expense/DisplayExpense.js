@@ -27,15 +27,18 @@ function DisplayExpense(props) {
         selectedYear={filterYear}
         onSelect={filterChangeHandler}
       ></ExpenseFilter>
-
-      {filterExpense.map((expense) => (
-        <ExpenseItems
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+      {filterExpense.length === 0 ? (
+        <p>No Expense found.</p>
+      ) : (
+        filterExpense.map((expense) => (
+          <ExpenseItems
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))
+      )}
     </Card>
   );
 }
